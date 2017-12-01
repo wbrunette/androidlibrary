@@ -1,3 +1,6 @@
+import org.gradle.api.attributes.Attribute
+import org.gradle.api.attributes.AttributeContainer
+
 /**************************************************************************************************
                                         GRADLE CONFIG
  *************************************************************************************************/
@@ -13,6 +16,8 @@ libraryScripts.each {
 }
 
 apply plugin: 'com.android.library'
+apply plugin: "com.jfrog.artifactory"
+apply plugin: "ivy-publish"
 
 group = groupId
 
@@ -68,17 +73,6 @@ android {
         sourceCompatibility javaVersion
         targetCompatibility javaVersion
     }
-
-    variantFilter { variant ->
-        def names = variant.flavors*.name
-        if(gradle.ext.odkPublishConfig) {
-            if (names.contains(gradle.ext.odkPublishConfigName)) {
-                variant.setIgnore(false)
-            } else {
-                variant.setIgnore(true)
-            }
-        }
-    }
 }
 
 
@@ -102,8 +96,69 @@ dependencies {
     compile 'com.android.support:support-v13:25.4.0'
 
     // Testing dependencies
-    testCompile 'junit:junit:4.12'
-    androidTestCompile 'com.android.support.test:rules:1.0.0'
-    androidTestCompile 'com.android.support.test:runner:1.0.0'
-    compile 'net.jcip:jcip-annotations:1.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:rules:1.0.1'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+
 }
+
+//publishing {
+//    publications {
+//        aar(IvyPublication) {
+//            artifact "$buildDir/outputs/aar/snapshotAndroidlibrary-snapshot-basic-debug.aar"
+//        }
+//    }
+//}
+
+project.version = version
+
+publishing {
+    publications {
+        aar(IvyPublication) {
+//            from components.android
+            revision version
+//            artifact = [
+//                source = "$buildDir/outputs/aar/androidlibrary_lib-snapshot-basic-release.aar",
+//                builtBy = "assembleSnapshotBasicRelease"
+//            ]
+            artifact source: "$buildDir/outputs/aar/demoAndroidlibrary-snapshot-basic-release.aar",
+                     builtBy: assemble
+        }
+    }
+    repositories {
+        ivy {
+            ivyPattern('[organization]/[module]/[revision]/[type]s/ivy-[revision].xml')
+            artifactPattern('[organization]/[module]/[revision]/[module]-[revision](-[classifier]).[ext]')
+        }
+    }
+}
+
+artifactoryPublish {
+    publications(publishing.publications.aar)
+}
+
+task update_version {
+    doLast {
+        publishing.publications.aar.revision version
+    }
+}
+
+//tasks.whenTaskAdded { task -> if (task.name.endsWith('artifactoryPublish')) {task.dependsOn.mustRunAfter assemble} }
+
+task printInfo {
+    doLast {
+        println project.version
+        println project.components
+//        for (Configuration config : getProject().getConfigurations()) {
+//            for (ConfigurationVariant cv : config.getOutgoing().getVariants()) {
+//                System.out.println("\tConfigurationVariant: " + cv.getName());
+//                for (PublishArtifact pa : cv.getArtifacts()) {
+//                    System.out.println("\t\tArtifact: " + pa.getFile());
+//                    System.out.println("\t\tType:" + pa.getType());
+//                }
+//            }
+//        }
+    }
+}
+
+//printInfo.dependsOn artifactoryPublish
