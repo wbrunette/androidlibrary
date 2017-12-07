@@ -14,7 +14,7 @@ libraryScripts.each {
 
 apply plugin: 'com.android.library'
 apply plugin: "com.jfrog.artifactory"
-apply plugin: "ivy-publish"
+//apply plugin: "ivy-publish"
 apply plugin: "maven-publish"
 
 group = groupId
@@ -33,7 +33,6 @@ android {
     }
 
     // set by command line arguments
-    publishNonDefault(gradle.ext.odkPublishConfig.toBoolean())
     defaultPublishConfig(gradle.ext.odkDefaultPublishConfig)
 
     flavorDimensions "stage", "testing"
@@ -124,10 +123,6 @@ publishing {
             artifactPattern('[organisation]/[module]/[revision]/[artifact]-[revision](-[classifier]).[ext]')
         }
     }
-}
-
-artifactoryPublish {
-    publications(publishing.publications.aarRelease, publishing.publications.aarDebug)
 }
 
 task updatePublications {
