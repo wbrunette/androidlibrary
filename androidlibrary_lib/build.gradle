@@ -127,7 +127,7 @@ publishing {
 
 task updatePublications {
     doLast {
-        bundleSnapshotBasicRelease.classifier snapshotRelease
+        bundleSnapshotBasicRelease.classifier
         bundleSnapshotBasicDebug.classifier snapshotDebug
 
         publishing.publications.aarRelease.artifact bundleSnapshotBasicRelease
@@ -136,3 +136,5 @@ task updatePublications {
         project.getArtifacts().add("default", bundleSnapshotBasicDebug)
     }
 }
+
+task spawnSnapshotBasicArchives(dependsOn: ['snapshotVersion', 'assembleSnapshotBasicDebug', 'assembleSnapshotBasicRelease'])
