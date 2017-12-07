@@ -23,7 +23,7 @@ configurations.all {
 
 apply plugin: "com.jfrog.artifactory"
 
-//artifactoryPublish.skip=true
+artifactoryPublish.skip=true
 
 artifactory {
     contextUrl = 'http://cwe.cs.washington.edu:8082/artifactory'
@@ -32,22 +32,18 @@ artifactory {
         //A closure defining publishing information
         repository {
             repoKey = 'libs-snapshot-local'   //The Artifactory repository key to publish to
-            username = 'lilin'          //The publisher user name
-            password = '78$UjOP$f&WX%owvGwR1'       //The publisher password
+            username = 'jenkins'          //The publisher user name
+            password = "$System.env.ARTIFACTORY_PASSWORD"       //The publisher password
             ivy {
                 //Optional section for configuring Ivy publication. Assumes Maven repo layout if not specified
-                ivyLayout = '[organization]/[module]/[revision]/[type]s/ivy-[revision].xml'
-                artifactLayout = '[organization]/[module]/[revision]/[module]-[revision](-[classifier]).[ext]'
+                ivyLayout = '[organisation]/[module]/[revision]/ivy-[revision].xml'
+                artifactLayout = '[organisation]/[module]/[revision]/[artifact]-[revision](-[classifier]).[ext]'
                 mavenCompatible = true //Convert any dots in an [organization] layout value to path separators, similar to Maven's groupId-to-path conversion. True if not specified
             }
         }
         defaults {
             //List of Gradle Publications (names or objects) from which to collect the list of artifacts to be deployed to Artifactory.
-            ////List of Gradle Configurations (names or objects) from which to collect the list of artifacts to be deployed to Artifactory.
-//            publications ('aar')
-//            publishConfigs(gradle.ext.odkDefaultPublishConfig)
-//            publishConfigs('archives', 'published', 'default', 'snapshotBasicReleaseApiElements', gradle.ext.odkDefaultPublishConfig)
-            publishConfigs('archives', 'published', 'default', gradle.ext.odkDefaultPublishConfig)
+            publishConfigs('default')
             publishBuildInfo = true   //Publish build-info to Artifactory (true by default)
             publishArtifacts = true   //Publish artifacts to Artifactory (true by default)
             publishPom = false   //Publish generated POM files to Artifactory (true by default).

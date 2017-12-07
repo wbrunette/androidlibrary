@@ -1,6 +1,3 @@
-import org.gradle.api.attributes.Attribute
-import org.gradle.api.attributes.AttributeContainer
-
 /**************************************************************************************************
                                         GRADLE CONFIG
  *************************************************************************************************/
@@ -18,6 +15,7 @@ libraryScripts.each {
 apply plugin: 'com.android.library'
 apply plugin: "com.jfrog.artifactory"
 apply plugin: "ivy-publish"
+apply plugin: "maven-publish"
 
 group = groupId
 
@@ -115,63 +113,31 @@ dependencies {
 
 }
 
-//publishing {
-//    publications {
-//        aar(IvyPublication) {
-//            artifact "$buildDir/outputs/aar/snapshotAndroidlibrary-snapshot-basic-debug.aar"
-//        }
-//    }
-//}
-
-project.version = version
-
 publishing {
     publications {
-        aar(IvyPublication) {
-//            from components.android
-            revision version
-//            artifact = [
-//                source = "$buildDir/outputs/aar/androidlibrary_lib-snapshot-basic-release.aar",
-//                builtBy = "assembleSnapshotBasicRelease"
-//            ]
-            artifact source: "$buildDir/outputs/aar/demoAndroidlibrary-snapshot-basic-release.aar",
-                     builtBy: assemble
-        }
+        aarRelease(MavenPublication) {}
+        aarDebug(MavenPublication) {}
     }
     repositories {
         ivy {
-            ivyPattern('[organization]/[module]/[revision]/[type]s/ivy-[revision].xml')
-            artifactPattern('[organization]/[module]/[revision]/[module]-[revision](-[classifier]).[ext]')
+            ivyPattern('[organisation]/[module]/[revision]/ivy-[revision].xml')
+            artifactPattern('[organisation]/[module]/[revision]/[artifact]-[revision](-[classifier]).[ext]')
         }
     }
 }
 
 artifactoryPublish {
-    publications(publishing.publications.aar)
+    publications(publishing.publications.aarRelease, publishing.publications.aarDebug)
 }
 
-task update_version {
+task updatePublications {
     doLast {
-        publishing.publications.aar.revision version
+        bundleSnapshotBasicRelease.classifier snapshotRelease
+        bundleSnapshotBasicDebug.classifier snapshotDebug
+
+        publishing.publications.aarRelease.artifact bundleSnapshotBasicRelease
+        publishing.publications.aarDebug.artifact bundleSnapshotBasicDebug
+
+        project.getArtifacts().add("default", bundleSnapshotBasicDebug)
     }
 }
-
-//tasks.whenTaskAdded { task -> if (task.name.endsWith('artifactoryPublish')) {task.dependsOn.mustRunAfter assemble} }
-
-task printInfo {
-    doLast {
-        println project.version
-        println project.components
-//        for (Configuration config : getProject().getConfigurations()) {
-//            for (ConfigurationVariant cv : config.getOutgoing().getVariants()) {
-//                System.out.println("\tConfigurationVariant: " + cv.getName());
-//                for (PublishArtifact pa : cv.getArtifacts()) {
-//                    System.out.println("\t\tArtifact: " + pa.getFile());
-//                    System.out.println("\t\tType:" + pa.getType());
-//                }
-//            }
-//        }
-    }
-}
-
-//printInfo.dependsOn artifactoryPublish
