@@ -38,7 +38,7 @@ public class IntentConsts {
    * <li>INTENT_KEY_INSTANCE_ID (optional)</li></ol>
    */
   public class ResolveCheckpoint {
-    public static final String APPLICATION_NAME = "org.opendatakit.services";
+    public static final String APPLICATION_NAME = "org.opendatakit.tables";
     public static final String ACTIVITY_NAME =
         "org.opendatakit.services.resolve.checkpoint.CheckpointResolutionActivity";
   }
@@ -50,7 +50,7 @@ public class IntentConsts {
    * <li>INTENT_KEY_INSTANCE_ID (optional)</li></ol>
    */
   public class ResolveConflict {
-    public static final String APPLICATION_NAME = "org.opendatakit.services";
+    public static final String APPLICATION_NAME = "org.opendatakit.tables";
     public static final String ACTIVITY_NAME =
         "org.opendatakit.services.resolve.conflict.ConflictResolutionActivity";
   }
@@ -60,10 +60,10 @@ public class IntentConsts {
    * <ol><li>INTENT_KEY_APP_NAME</li></ol>
    */
   public class Sync {
-    public static final String APPLICATION_NAME = "org.opendatakit.services";
+    public static final String APPLICATION_NAME = "org.opendatakit.tables";
     public static final String ACTIVITY_NAME =
         "org.opendatakit.services.sync.actions.activities.SyncActivity";
-    public static final String SYNC_SERVICE_PACKAGE = "org.opendatakit.services";
+    public static final String SYNC_SERVICE_PACKAGE = "org.opendatakit.tables";
     public static final String SYNC_SERVICE_CLASS = "org.opendatakit.services.sync.service.OdkSyncService";
   }
 
@@ -72,7 +72,7 @@ public class IntentConsts {
    * <ol><li>INTENT_KEY_APP_NAME</li></ol>
    */
   public class Login {
-    public static final String APPLICATION_NAME = "org.opendatakit.services";
+    public static final String APPLICATION_NAME = "org.opendatakit.tables";
     public static final String ACTIVITY_NAME =
         "org.opendatakit.services.sync.actions.activities.LoginActivity";
   }
@@ -82,18 +82,18 @@ public class IntentConsts {
    * <ol><li>INTENT_KEY_APP_NAME</li></ol>
    */
   public class AppProperties {
-    public static final String APPLICATION_NAME = "org.opendatakit.services";
+    public static final String APPLICATION_NAME = "org.opendatakit.tables";
     public static final String ACTIVITY_NAME =
         "org.opendatakit.services.preferences.activities.AppPropertiesActivity";
   }
 
   public class Database {
-    public static final String DATABASE_SERVICE_PACKAGE = "org.opendatakit.services";
+    public static final String DATABASE_SERVICE_PACKAGE = "org.opendatakit.tables";
     public static final String DATABASE_SERVICE_CLASS = "org.opendatakit.services.database.service.OdkDatabaseService";
   }
 
   public class Survey {
-    public static final String SURVEY_PACKAGE_NAME = "org.opendatakit.survey";
+    public static final String SURVEY_PACKAGE_NAME = "org.opendatakit.tables";
     public static final String SURVEY_MAIN_MENU_ACTIVITY_COMPONENT_NAME = "org.opendatakit.survey"
         + ".activities.SplashScreenActivity";
   }
@@ -103,7 +103,7 @@ public class IntentConsts {
    * <ol><li>INTENT_KEY_PERMISSION_ONLY</li></ol>
    */
   public class Services {
-    public static final String PACKAGE_NAME = "org.opendatakit.services";
+    public static final String PACKAGE_NAME = "org.opendatakit.tables";
     public static final String MAIN_ACTIVITY = "org.opendatakit.services.MainActivity";
   }
 

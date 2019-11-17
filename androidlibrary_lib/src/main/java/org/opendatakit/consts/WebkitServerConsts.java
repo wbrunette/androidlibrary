@@ -16,7 +16,7 @@
 package org.opendatakit.consts;
 
 public class WebkitServerConsts {
-  public static final String WEBKITSERVER_SERVICE_PACKAGE = "org.opendatakit.services";
+  public static final String WEBKITSERVER_SERVICE_PACKAGE = "org.opendatakit.tables";
   public static final String WEBKITSERVER_SERVICE_CLASS = "org.opendatakit.services.webkitservice.service.OdkWebkitServerService";
 
   public static final String SCHEME = "http";
