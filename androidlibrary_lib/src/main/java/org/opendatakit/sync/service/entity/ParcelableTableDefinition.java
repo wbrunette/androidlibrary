@@ -1,10 +1,10 @@
 package org.opendatakit.sync.service.entity;
 
-import org.opendatakit.aggregate.odktables.rest.entity.Column;
-import org.opendatakit.aggregate.odktables.rest.entity.TableDefinition;
-
 import android.os.Parcel;
 import android.os.Parcelable;
+
+import org.opendatakit.aggregate.odktables.rest.entity.Column;
+import org.opendatakit.aggregate.odktables.rest.entity.TableDefinition;
 
 import java.util.ArrayList;
 import java.util.List;

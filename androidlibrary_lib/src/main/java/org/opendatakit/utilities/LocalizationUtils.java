@@ -16,6 +16,7 @@
 package org.opendatakit.utilities;
 
 import com.fasterxml.jackson.core.type.TypeReference;
+
 import org.opendatakit.consts.CharsetConsts;
 import org.opendatakit.logging.WebLogger;
 

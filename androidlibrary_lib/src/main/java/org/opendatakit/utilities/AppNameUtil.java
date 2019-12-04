@@ -1,6 +1,7 @@
 package org.opendatakit.utilities;
 
 import android.app.Activity;
+
 import org.opendatakit.activities.IAppAwareActivity;
 
 /**

@@ -15,6 +15,7 @@
 package org.opendatakit.database;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+
 import org.opendatakit.logging.WebLogger;
 import org.opendatakit.utilities.ODKFileUtils;
 

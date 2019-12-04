@@ -16,12 +16,14 @@ package org.opendatakit.fragment;
 
 import android.app.Activity;
 import android.app.Dialog;
-import androidx.fragment.app.DialogFragment;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+
+import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+
 import org.opendatakit.androidlibrary.R;
 import org.opendatakit.logging.WebLogger;
 import org.opendatakit.utilities.AppNameUtil;

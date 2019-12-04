@@ -17,6 +17,7 @@ package org.opendatakit.task;
 
 import android.app.Application;
 import android.os.AsyncTask;
+
 import org.opendatakit.androidlibrary.R;
 import org.opendatakit.listener.LicenseReaderListener;
 

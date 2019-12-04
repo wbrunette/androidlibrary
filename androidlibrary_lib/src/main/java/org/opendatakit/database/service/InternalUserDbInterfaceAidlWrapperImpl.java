@@ -18,6 +18,7 @@ import android.content.ContentValues;
 import android.os.ParcelUuid;
 import android.os.Parcelable;
 import android.os.RemoteException;
+
 import org.opendatakit.database.data.BaseTable;
 import org.opendatakit.database.data.ColumnList;
 import org.opendatakit.database.data.KeyValueStoreEntry;
@@ -31,8 +32,6 @@ import org.opendatakit.exception.ActionNotAuthorizedException;
 import org.opendatakit.exception.ServicesAvailabilityException;
 import org.opendatakit.logging.WebLogger;
 import org.sqlite.database.sqlite.SQLiteException;
-
-import org.opendatakit.database.service.IDbInterface;
 
 import java.io.Serializable;
 import java.util.LinkedList;

@@ -16,6 +16,7 @@ package org.opendatakit.logging;
 
 import android.os.FileObserver;
 import android.util.Log;
+
 import org.apache.commons.lang3.CharEncoding;
 import org.joda.time.DateTime;
 import org.opendatakit.androidlibrary.BuildConfig;

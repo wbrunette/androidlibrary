@@ -27,6 +27,7 @@ import android.provider.MediaStore;
 import android.provider.MediaStore.Audio;
 import android.provider.MediaStore.Images;
 import android.provider.MediaStore.Video;
+
 import org.opendatakit.database.utilities.CursorUtils;
 import org.opendatakit.logging.WebLogger;
 

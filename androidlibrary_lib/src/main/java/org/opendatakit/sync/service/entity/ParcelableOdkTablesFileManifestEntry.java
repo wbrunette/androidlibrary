@@ -1,9 +1,9 @@
 package org.opendatakit.sync.service.entity;
 
-import org.opendatakit.aggregate.odktables.rest.entity.OdkTablesFileManifestEntry;
-
 import android.os.Parcel;
 import android.os.Parcelable;
+
+import org.opendatakit.aggregate.odktables.rest.entity.OdkTablesFileManifestEntry;
 
 public class ParcelableOdkTablesFileManifestEntry extends OdkTablesFileManifestEntry implements Parcelable {
   protected ParcelableOdkTablesFileManifestEntry(Parcel in) {

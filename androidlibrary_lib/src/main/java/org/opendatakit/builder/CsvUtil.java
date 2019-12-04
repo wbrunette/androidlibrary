@@ -16,6 +16,7 @@
 package org.opendatakit.builder;
 
 import android.content.ContentValues;
+
 import org.apache.commons.lang3.CharEncoding;
 import org.opendatakit.aggregate.odktables.rest.ConflictType;
 import org.opendatakit.aggregate.odktables.rest.ElementDataType;

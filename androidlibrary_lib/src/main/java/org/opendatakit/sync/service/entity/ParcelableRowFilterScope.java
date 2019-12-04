@@ -1,9 +1,9 @@
 package org.opendatakit.sync.service.entity;
 
-import org.opendatakit.aggregate.odktables.rest.entity.RowFilterScope;
-
 import android.os.Parcel;
 import android.os.Parcelable;
+
+import org.opendatakit.aggregate.odktables.rest.entity.RowFilterScope;
 
 public class ParcelableRowFilterScope extends RowFilterScope implements Parcelable {
   public ParcelableRowFilterScope(Access access, String rowOwner, String groupReadOnly, String groupModify, String groupPrivileged) {

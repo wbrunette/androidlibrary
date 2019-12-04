@@ -15,6 +15,7 @@
 package org.opendatakit.properties;
 
 import android.content.Context;
+
 import org.apache.commons.lang3.CharEncoding;
 import org.opendatakit.aggregate.odktables.rest.TableConstants;
 import org.opendatakit.androidlibrary.R;

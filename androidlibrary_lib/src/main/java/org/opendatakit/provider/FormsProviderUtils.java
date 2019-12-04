@@ -16,7 +16,9 @@
 package org.opendatakit.provider;
 
 import android.net.Uri;
+
 import com.fasterxml.jackson.core.JsonProcessingException;
+
 import org.opendatakit.aggregate.odktables.rest.ApiConstants;
 import org.opendatakit.logging.WebLogger;
 import org.opendatakit.utilities.ODKFileUtils;

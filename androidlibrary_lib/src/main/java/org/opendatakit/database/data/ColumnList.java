@@ -16,6 +16,7 @@ package org.opendatakit.database.data;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+
 import org.opendatakit.aggregate.odktables.rest.entity.Column;
 
 import java.util.ArrayList;

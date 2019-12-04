@@ -15,6 +15,7 @@
 package org.opendatakit.logging;
 
 import android.util.Log;
+
 import org.opendatakit.utilities.ODKFileUtils;
 
 /**

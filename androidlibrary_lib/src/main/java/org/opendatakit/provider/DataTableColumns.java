@@ -15,6 +15,7 @@
 package org.opendatakit.provider;
 
 import android.provider.BaseColumns;
+
 import org.opendatakit.aggregate.odktables.rest.TableConstants;
 import org.opendatakit.aggregate.odktables.rest.entity.RowFilterScope;
 

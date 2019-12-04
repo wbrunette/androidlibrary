@@ -18,8 +18,10 @@ package org.opendatakit.database.queries;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
+
 import org.opendatakit.utilities.ODKFileUtils;
 
 import java.io.IOException;

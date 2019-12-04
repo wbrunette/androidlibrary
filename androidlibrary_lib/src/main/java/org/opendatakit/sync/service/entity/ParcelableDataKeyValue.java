@@ -1,9 +1,9 @@
 package org.opendatakit.sync.service.entity;
 
-import org.opendatakit.aggregate.odktables.rest.entity.DataKeyValue;
-
 import android.os.Parcel;
 import android.os.Parcelable;
+
+import org.opendatakit.aggregate.odktables.rest.entity.DataKeyValue;
 
 public class ParcelableDataKeyValue extends DataKeyValue implements Parcelable {
   public ParcelableDataKeyValue() {

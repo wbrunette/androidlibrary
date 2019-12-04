@@ -17,6 +17,7 @@ package org.opendatakit.database.utilities;
 
 import android.annotation.SuppressLint;
 import android.database.Cursor;
+
 import org.opendatakit.logging.WebLogger;
 import org.opendatakit.utilities.ODKFileUtils;
 

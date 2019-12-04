@@ -15,6 +15,7 @@
 package org.opendatakit.database.service;
 
 import android.content.ContentValues;
+
 import org.opendatakit.aggregate.odktables.rest.entity.RowFilterScope;
 import org.opendatakit.database.data.BaseTable;
 import org.opendatakit.database.data.ColumnList;

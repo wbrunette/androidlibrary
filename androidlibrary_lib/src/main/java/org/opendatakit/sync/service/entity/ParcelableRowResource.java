@@ -1,10 +1,10 @@
 package org.opendatakit.sync.service.entity;
 
-import org.opendatakit.aggregate.odktables.rest.entity.Row;
-import org.opendatakit.aggregate.odktables.rest.entity.RowResource;
-
 import android.os.Parcel;
 import android.os.Parcelable;
+
+import org.opendatakit.aggregate.odktables.rest.entity.Row;
+import org.opendatakit.aggregate.odktables.rest.entity.RowResource;
 
 public class ParcelableRowResource extends RowResource implements Parcelable {
   public ParcelableRowResource(Row row) {

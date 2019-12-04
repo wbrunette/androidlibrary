@@ -1,13 +1,12 @@
 package org.opendatakit.sync.service.entity;
 
-import org.opendatakit.aggregate.odktables.rest.entity.RowOutcome;
-import org.opendatakit.aggregate.odktables.rest.entity.RowOutcomeList;
-
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import org.opendatakit.aggregate.odktables.rest.entity.RowOutcome;
+import org.opendatakit.aggregate.odktables.rest.entity.RowOutcomeList;
+
 import java.util.ArrayList;
-import java.util.List;
 
 public class ParcelableRowOutcomeList extends RowOutcomeList implements Parcelable {
   public ParcelableRowOutcomeList() {

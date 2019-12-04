@@ -1,9 +1,9 @@
 package org.opendatakit.sync.service.entity;
 
-import org.opendatakit.aggregate.odktables.rest.entity.PrivilegesInfo;
-
 import android.os.Parcel;
 import android.os.Parcelable;
+
+import org.opendatakit.aggregate.odktables.rest.entity.PrivilegesInfo;
 
 public class ParcelablePrivilegesInfo extends PrivilegesInfo implements Parcelable {
   protected ParcelablePrivilegesInfo(Parcel in) {

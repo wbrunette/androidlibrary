@@ -17,6 +17,7 @@ package org.opendatakit.database.utilities;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.type.CollectionType;
+
 import org.opendatakit.aggregate.odktables.rest.ElementDataType;
 import org.opendatakit.database.data.KeyValueStoreEntry;
 import org.opendatakit.logging.WebLogger;

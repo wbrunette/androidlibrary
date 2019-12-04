@@ -14,7 +14,6 @@
 
 package org.opendatakit.fragment;
 
-import androidx.fragment.app.Fragment;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -26,6 +25,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.fragment.app.Fragment;
+
 import org.opendatakit.activities.IAppAwareActivity;
 import org.opendatakit.androidlibrary.R;
 import org.opendatakit.application.IToolAware;

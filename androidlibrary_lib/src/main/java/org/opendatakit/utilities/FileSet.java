@@ -17,6 +17,7 @@ package org.opendatakit.utilities;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.type.CollectionType;
+
 import org.opendatakit.logging.WebLogger;
 
 import java.io.File;

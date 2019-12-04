@@ -1,9 +1,9 @@
 package org.opendatakit.sync.service.entity;
 
-import org.opendatakit.aggregate.odktables.rest.entity.UserInfo;
-
 import android.os.Parcel;
 import android.os.Parcelable;
+
+import org.opendatakit.aggregate.odktables.rest.entity.UserInfo;
 
 public class ParcelableUserInfo extends UserInfo implements Parcelable {
   protected ParcelableUserInfo(Parcel in) {

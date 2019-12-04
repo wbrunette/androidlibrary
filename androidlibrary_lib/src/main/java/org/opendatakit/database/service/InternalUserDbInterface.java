@@ -15,6 +15,7 @@
 package org.opendatakit.database.service;
 
 import android.content.ContentValues;
+
 import org.opendatakit.database.data.BaseTable;
 import org.opendatakit.database.data.ColumnList;
 import org.opendatakit.database.data.KeyValueStoreEntry;

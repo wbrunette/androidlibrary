@@ -16,6 +16,7 @@ package org.opendatakit.utilities;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+
 import org.opendatakit.logging.WebLogger;
 
 import java.io.File;

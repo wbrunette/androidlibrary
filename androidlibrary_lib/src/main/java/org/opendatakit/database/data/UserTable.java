@@ -17,6 +17,7 @@ package org.opendatakit.database.data;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+
 import org.opendatakit.aggregate.odktables.rest.ElementDataType;
 import org.opendatakit.aggregate.odktables.rest.ElementType;
 import org.opendatakit.database.queries.BindArgs;
