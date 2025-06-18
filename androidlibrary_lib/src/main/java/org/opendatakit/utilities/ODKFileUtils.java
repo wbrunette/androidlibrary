@@ -258,6 +258,24 @@ public final class ODKFileUtils {
     }
   }
 
+  public static boolean verifyOdkFolderExists(String providerID){
+    try {
+      ODKFileUtils.verifyExternalStorageAvailability();
+      File f = new File(getOdkFolder());
+      if (!f.exists()) {
+        f.mkdir();
+      } else if (!f.isDirectory()) {
+        Log.e(providerID, f.getAbsolutePath() + " is not a directory!");
+        return false;
+      }
+    } catch (Exception e) {
+      Log.e(providerID, "External storage not available");
+      return false;
+    }
+
+    return true;
+  }
+
   /**
    * Used all over the place
    *
