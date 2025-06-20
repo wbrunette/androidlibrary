@@ -17,6 +17,7 @@ package org.opendatakit.utilities;
 
 import android.net.Uri;
 import android.os.Environment;
+import android.util.EventLogTags;
 import android.util.Log;
 
 import androidx.annotation.CheckResult;
@@ -157,6 +158,7 @@ public final class ODKFileUtils {
 
   private static final Pattern FORWARD_SLASH_PATTERN = Pattern.compile("/");
   private static final Pattern FILE_SEPARATOR_PATTERN;
+
   static {
 	  if ( File.separator.equals("/") ) {
 		  FILE_SEPARATOR_PATTERN = Pattern.compile(File.separator);
@@ -258,18 +260,22 @@ public final class ODKFileUtils {
     }
   }
 
-  public static boolean verifyOdkFolderExists(String providerID){
+  public static boolean verifyOdkFolderExists(){
     try {
       ODKFileUtils.verifyExternalStorageAvailability();
       File f = new File(getOdkFolder());
       if (!f.exists()) {
-        f.mkdir();
+        if (!f.mkdir())
+          throw new RuntimeException(
+                  "ODK reports :: Unable to create opendatakit folder"
+          );
       } else if (!f.isDirectory()) {
-        Log.e(providerID, f.getAbsolutePath() + " is not a directory!");
-        return false;
+        throw new RuntimeException(
+                "ODK reports :: " + f.getAbsolutePath() + " is not a directory"
+        );
       }
     } catch (Exception e) {
-      Log.e(providerID, "External storage not available");
+      Log.e(TAG, "External storage not available");
       return false;
     }
 
